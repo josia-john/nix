@@ -2,7 +2,7 @@
 
 {
     environment.systemPackages = [
-        pkgs.thunderbird
-        pkgs.emacs
+        pkgs.vim
+        pkgs.git
     ];
 }

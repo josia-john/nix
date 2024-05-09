@@ -2,9 +2,10 @@
 
 {
     imports = [
-        /etc/nixos/hardware-configuration.nix
+        /home/josia/hardware-configuration.nix
         ./modules
     ];
+    boot.loader.systemd-boot.enable=true;
 
     console.keyMap = "dvorak";
 
@@ -13,5 +14,5 @@
             hostname = "nixy";
             username = "josia";
         };
-    }
+    };
 }

@@ -3,7 +3,7 @@
     lib,
     ...
 }:
-
+with lib;
 {
     options.modules.system = {
         hostname = mkOption {
@@ -18,9 +18,9 @@
     };
 
     config = {
-        networking.hostName = options.modules.system.hostname;
+        networking.hostName = config.modules.system.hostname;
 
-        users.users.${options.modules.system.username} = {
+        users.users.${config.modules.system.username} = {
             isNormalUser = true;
             extraGroups = [ "wheel" ];
         };
