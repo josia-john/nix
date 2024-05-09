@@ -13,6 +13,7 @@
     slurp
     wl-clipboard
     swaybg
+    pipewire
   ];
 
   home.stateVersion = "23.11";
@@ -25,8 +26,10 @@
       terminal = "alacritty";
       bars = [{
         # command = "waybar";
+        position = "top";
       }];
       fonts.names = [ "monospace" ];
+      output = { "DP-1" = { scale = "2"; }; };
     };
     extraConfig = ''
       input "type:keyboard" {

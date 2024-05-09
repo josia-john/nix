@@ -81,6 +81,17 @@
     wget
   ];
 
+fonts.packages = with pkgs; [
+    material-design-icons
+    (nerdfonts.override {
+        fonts = [ "JetBrainsMono"];
+      })
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+    noto-fonts-emoji
+  ];
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
