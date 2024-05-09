@@ -1,7 +1,7 @@
 _: {
     imports = [
         ./programs.nix
-        ./system.nix
+        ./host.nix
         ./boot.nix
     ];
 }
