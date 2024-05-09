@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 {
-    environment.systemPackages = [
-        pkgs.vim
-        pkgs.git
+    environment.systemPackages = with pkgs [
+        vim
+        git
     ];
 }
