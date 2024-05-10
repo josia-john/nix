@@ -13,6 +13,26 @@
                         "xkb_options" = "compose:menu";
                     };
                 };
+                output = {
+                    DP-1 = {
+                        scale = "2";
+                        position = "0,0";
+                    };
+                    eDP-1 = {
+                        scale = "1.5";
+                        position = "0,1080";
+                    };
+                };
+            };
+        };
+
+        home.pointerCursor = {
+            name = "Adwaita";
+            package = pkgs.gnome.adwaita-icon-theme;
+            size = 24;
+            x11 = {
+                enable = true;
+                defaultCursor = "Adwaita";
             };
         };
     };

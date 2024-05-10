@@ -13,6 +13,8 @@
             slurp
             wl-clipboard
             swaybg
+            vscode
+            obsidian
         ];
 
         programs.home-manager.enable = true;
