@@ -7,7 +7,6 @@
         vim
         git
         light
-        nmtui
     ];
 
     fonts = {

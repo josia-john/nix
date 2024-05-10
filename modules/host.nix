@@ -30,7 +30,10 @@ with lib;
     };
 
     config = {
-        networking.hostName = config.modules.host.hostname;
+        networking = {
+            hostName = config.modules.host.hostname;
+            networkmanager.enable = true;
+        };
 
         users.users.${config.modules.host.username} = {
             isNormalUser = true;
