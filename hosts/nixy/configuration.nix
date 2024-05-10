@@ -2,10 +2,10 @@
 
 {
     imports = [
-        /home/josia/hardware-configuration.nix
-        ./modules
+        ./../../hardware-configuration.nix
+        ./../../modules
     ];
-
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
     modules = {
         host = {
             hostname = "nixy";
