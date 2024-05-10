@@ -7,7 +7,7 @@
             config = {
                 modifier = "Mod4";
                 input = {
-                    "keyboard" = {
+                    "type:keyboard" = {
                         "xkb_layout" = "dvorak";
                     };
                 };
