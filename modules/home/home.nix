@@ -13,7 +13,7 @@
             slurp
             wl-clipboard
             swaybg
-        ]
+        ];
 
         programs.home-manager.enable = true;
 
