@@ -5,4 +5,8 @@
         vim
         git
     ];
+
+    fonts = {
+        enableDefaultPackages = true;
+    };
 }
