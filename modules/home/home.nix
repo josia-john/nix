@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-    home-manager.users.josia = {
+    home-manager.users.${config.modules.host.username} = {
         home.stateVersion = "23.11";
     };
 }
