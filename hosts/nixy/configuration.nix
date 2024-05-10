@@ -10,7 +10,6 @@
         host = {
             hostname = "nixy";
             username = "josia";
-            layout = "dvorak";
         };
     };
 }

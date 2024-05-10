@@ -21,12 +21,6 @@ with lib;
             default = "123456";
             type = types.str;
         };
-
-        layout = mkOption {
-            description = "keyboard layout for this system";
-            default = "us";
-            type = types.str;
-        };
     };
 
     config = {
@@ -41,7 +35,7 @@ with lib;
             initialPassword = config.modules.host.initialPassword;
         };
 
-        console.keyMap = config.modules.host.layout;
+        console.keyMap = "dvorak";
 
     };
 }
