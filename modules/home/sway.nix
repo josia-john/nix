@@ -8,7 +8,9 @@
                 modifier = "Mod4";
                 input = {
                     "type:keyboard" = {
-                        "xkb_layout" = "dvorak";
+                        "xkb_layout" = "us";
+                        "xkb_variant" = "dvorak";
+                        "xkb_options" = "compose:menu";
                     };
                 };
             };
