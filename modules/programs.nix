@@ -7,6 +7,7 @@
         vim
         git
         light
+        neofetch
     ];
 
     fonts = {

@@ -21,6 +21,9 @@ with lib;
                             "xkb_variant" = "dvorak";
                             "xkb_options" = "compose:menu";
                         };
+                        "*" = {
+                            tap = "enabled";
+                        };
                     };
                     output = {
                         DP-1 = {

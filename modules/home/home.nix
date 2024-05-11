@@ -16,6 +16,8 @@
             obsidian
             rofi-wayland
             swayimg
+            texliveFull
+            thunderbird
         ];
 
         services =  {
