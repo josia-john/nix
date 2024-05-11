@@ -4,5 +4,6 @@ _: {
         ./host.nix
         ./boot.nix
         ./home
+        ./other
     ];
 }

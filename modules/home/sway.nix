@@ -28,7 +28,7 @@ with lib;
                             position = "0,0";
                         };
                         eDP-1 = {
-                            scale = "1.5";
+                            scale = "1.25";
                             position = "0,1080";
                         };
                         "*" = {
@@ -49,5 +49,8 @@ with lib;
                 };
             };
         };
+
+        # fix electron apps
+        environment.sessionVariables.NIXOS_OZONE_WL = "1";
     };
 }
