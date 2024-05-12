@@ -15,6 +15,21 @@ with lib;
                 enable = true;
                 config = {
                     modifier = "Mod4";
+                    menu = "rofi -show drun";
+                    terminal = "alacritty";
+                    keybindings =
+                        let
+                        # modifier = config.home-manager.users.${config.modules.host.username}.wayland.windowManager.sway.config.modifier;
+                        modifier = "Mod4";
+                        in lib.mkOptionDefault {
+                        "${modifier}+Shift+q" = null;
+                        "${modifier}+q" = "kill";
+                        "${modifier}+d" = null;
+                        "${modifier}+space" = "exec rofi -show drun";
+                        "${modifier}+Shift+c" = null;
+                        "${modifier}+Shift+r" = "reload";
+                        "Print" = "exec grim -g \"$(slurp)\"";
+                    };
                     input = {
                         "type:keyboard" = {
                             "xkb_layout" = "us";

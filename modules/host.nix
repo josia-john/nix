@@ -37,5 +37,6 @@ with lib;
 
         console.keyMap = "dvorak";
 
+        services.automatic-timezoned.enable = true;
     };
 }
