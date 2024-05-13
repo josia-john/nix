@@ -1,6 +1,7 @@
 {
     config,
     lib,
+    pkgs,
     ...
 }:
 with lib;
@@ -30,6 +31,7 @@ with lib;
         };
 
         users.users.${config.modules.host.username} = {
+            shell = pkgs.zsh;
             isNormalUser = true;
             extraGroups = [ "wheel" ];
             initialPassword = config.modules.host.initialPassword;

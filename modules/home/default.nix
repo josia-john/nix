@@ -3,5 +3,6 @@ _: {
         ./sway.nix
         ./home.nix
         ./vscode.nix
+        ./zsh.nix
     ];
 }
