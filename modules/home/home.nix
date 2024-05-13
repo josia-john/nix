@@ -18,6 +18,7 @@
             swayimg
             texliveFull
             thunderbird
+            pavucontrol
         ];
 
         services =  {
