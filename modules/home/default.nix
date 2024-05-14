@@ -4,5 +4,6 @@ _: {
         ./home.nix
         ./vscode.nix
         ./zsh.nix
+        ./waybar.nix
     ];
 }

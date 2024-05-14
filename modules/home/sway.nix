@@ -54,6 +54,13 @@ with lib;
                             bg = if (config.modules.home.sway.wallpaper != "") then "${config.modules.home.sway.wallpaper} fill" else "#000000 solid_color";
                         };
                     };
+
+                    bars = [
+                        {
+                            position = "top";
+                            command = "waybar";
+                        }
+                    ];
                 };
                 checkConfig = false;
             };

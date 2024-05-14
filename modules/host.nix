@@ -40,5 +40,7 @@ with lib;
         console.keyMap = "dvorak";
 
         services.automatic-timezoned.enable = true;
+        # weird networkmanager fails
+        systemd.services.NetworkManager-wait-online.enable = false;
     };
 }
