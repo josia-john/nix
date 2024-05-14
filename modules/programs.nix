@@ -6,7 +6,7 @@
     environment.systemPackages = with pkgs; [
         vim
         git
-        light
+        brightnessctl
         neofetch
     ];
 

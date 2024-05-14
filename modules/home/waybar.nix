@@ -161,7 +161,7 @@
                         "tooltip"= false;
                     };
                     "clock#3"= {
-                        "format"= "{:%y-%m-%d}";
+                        "format"= "{:%Y-%m-%d}";
                         "tooltip"= false;
                     };
 
