@@ -163,6 +163,7 @@
                     "clock#3"= {
                         "format"= "{:%Y-%m-%d}";
                         "tooltip"= false;
+                        "on-click" = "exec date +%F | wl-copy";
                     };
 
                     "pulseaudio"= {
