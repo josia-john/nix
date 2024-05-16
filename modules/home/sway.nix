@@ -30,6 +30,10 @@ with lib;
                         "${modifier}+Shift+r" = "reload";
                         "Print" = "exec grim -g \"$(slurp)\"";
                         "${modifier}+Shift+l" = "exec swaylock --clock --indicator --screenshots --effect-pixelate 10 --effect-greyscale";
+                        "${modifier}+Shift+Control+up" = "move workspace to output up";
+                        "${modifier}+Shift+Control right" = "move workspace to output right";
+                        "${modifier}+Shift+Control+left" = "move workspace to output left";
+                        "${modifier}+Shift+Control+down" = "move workspace to output down";
                     
                         "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
                         "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
@@ -70,7 +74,7 @@ with lib;
 
                     startup = [
                         {
-                            command = "sh /home/josia/Downloads/autostart.sh";
+                            command = "sh /usr/share/scripts/autostart.sh";
                         }
                     ];
                 };
