@@ -198,11 +198,11 @@
                     };
                     "memory"= {
                         "interval"= 5;
-                        "format"= "Mem {}%";
+                        "format"= "  {}%";
                     };
                     "cpu"= {
                         "interval"= 5;
-                        "format"= "CPU {usage:2}%";
+                        "format"= "  {usage:2}%";
                         "on-click"= "alacritty -e htop";
                     };
                     "battery"= {
@@ -211,7 +211,7 @@
                             "warning"= 30;
                             "critical"= 15;
                         };
-                        "format"= "{icon} {capacity}%";
+                        "format"= "{icon}  {capacity}%";
                         "format-icons"= [
                             ""
                             ""
@@ -222,7 +222,7 @@
                     };
                     "disk"= {
                         "interval"= 5;
-                        "format"= "Disk {percentage_used:2}%";
+                        "format"= "  {percentage_used:2}%";
                         "path"= "/";
                     };
                 };

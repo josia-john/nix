@@ -8,6 +8,8 @@
         git
         brightnessctl
         neofetch
+        zip
+        unzip
     ];
 
     fonts = {
