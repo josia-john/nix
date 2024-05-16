@@ -29,6 +29,7 @@
 
                 #workspaces,
                 #scratchpad,
+                #network,
                 #clock.1,
                 #clock.2,
                 #clock.3,
@@ -75,6 +76,7 @@
                 }
 
                 #clock,
+                #network,
                 #pulseaudio,
                 #memory,
                 #cpu,
@@ -91,6 +93,9 @@
                     "modules-left"= [
                         "sway/workspaces"
                         "sway/scratchpad"
+                        "custom/right-arrow-dark"
+                        "custom/right-arrow-light"
+                        "network"
                         "custom/right-arrow-dark"
                     ];
                     "modules-center"= [
@@ -149,6 +154,17 @@
                         "format-icons"= ["" ""];
                         "tooltip"= true;
                         "tooltip-format"= "{app}: {title}";
+                    };
+
+                    "network" = {
+                        "interval" = 5;
+                        "format" = "{iwname}";
+                        "format-wifi" = "{essid} ({signalStrength}%)";
+                        "format-ethernet" = "{ipaddr}/{cidr}";
+                        "format-disconnected" = "Disconnected";
+                        "format-disabled" = "Disabled";
+                        "tooltip-format" = "{ipaddr}";
+                        "on-click" = "alacritty -e nmtui";
                     };
 
                     "clock#1"= {
