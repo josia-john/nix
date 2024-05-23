@@ -10,6 +10,7 @@
         neofetch
         zip
         unzip
+        wget
     ];
 
     fonts = {

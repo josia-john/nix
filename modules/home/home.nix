@@ -7,7 +7,7 @@
         
         home.packages = with pkgs; [
             firefox
-            alacritty
+            foot
             htop
             grim
             slurp
@@ -19,12 +19,14 @@
             texliveFull
             thunderbird
             pavucontrol
+            mars-mips
+            pandoc
         ];
 
         services =  {
             mako = {
                 enable = true;
-                defaultTimeout = 2000;
+                defaultTimeout = 4000;
             };
         };
 

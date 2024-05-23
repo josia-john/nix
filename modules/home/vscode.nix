@@ -8,6 +8,7 @@
                 bbenoist.nix
                 ms-vscode.cpptools
                 james-yu.latex-workshop
+                mathiasfrohlich.kotlin
             ];
             mutableExtensionsDir = false;
         };

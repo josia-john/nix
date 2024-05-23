@@ -28,6 +28,16 @@ with lib;
         networking = {
             hostName = config.modules.host.hostname;
             networkmanager.enable = true;
+
+            extraHosts =
+                ''
+                    94.177.8.216 myserver
+                '';
+        };
+
+        services.avahi = {
+            enable = true;
+            nssmdns4 = true;
         };
 
         users.users.${config.modules.host.username} = {

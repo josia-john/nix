@@ -164,7 +164,7 @@
                         "format-disconnected" = "Disconnected";
                         "format-disabled" = "Disabled";
                         "tooltip-format" = "{ipaddr}";
-                        "on-click" = "alacritty -e nmtui";
+                        "on-click" = "foot -e nmtui";
                     };
 
                     "clock#1"= {
@@ -194,7 +194,7 @@
                             ];
                         };
                         "scroll-step"= 5;
-                        "on-click"= "alacritty -e alsamixer";
+                        "on-click"= "foot -e alsamixer";
                     };
                     "memory"= {
                         "interval"= 5;
@@ -203,7 +203,7 @@
                     "cpu"= {
                         "interval"= 5;
                         "format"= "  {usage:2}%";
-                        "on-click"= "alacritty -e htop";
+                        "on-click"= "foot -e htop";
                     };
                     "battery"= {
                         "states"= {

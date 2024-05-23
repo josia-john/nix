@@ -16,7 +16,7 @@ with lib;
                 config = {
                     modifier = "Mod4";
                     menu = "rofi -show drun";
-                    terminal = "alacritty";
+                    terminal = "foot";
                     keybindings =
                         let
                         # modifier = config.home-manager.users.${config.modules.host.username}.wayland.windowManager.sway.config.modifier;
@@ -30,6 +30,7 @@ with lib;
                         "${modifier}+Shift+r" = "reload";
                         "Print" = "exec grim -g \"$(slurp)\"";
                         "${modifier}+Shift+l" = "exec swaylock --clock --indicator --screenshots --effect-pixelate 10 --effect-greyscale";
+                        "${modifier}+Shift+s" = "exec swaylock --clock --indicator --screenshots --effect-pixelate 10 --effect-greyscale & systemctl suspend";
                         "${modifier}+Shift+Control+up" = "move workspace to output up";
                         "${modifier}+Shift+Control right" = "move workspace to output right";
                         "${modifier}+Shift+Control+left" = "move workspace to output left";
@@ -38,8 +39,10 @@ with lib;
                         "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
                         "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
                         "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -5%";
-                        "XF86MonBrightnessUp" = "exec brightnessctl set 5%+";
-                        "XF86MonBrightnessDown" = "exec brightnessctl set 5%-";
+                        "XF86MonBrightnessUp" = "exec brightnessctl set --exponent=3 10%+";
+                        "XF86MonBrightnessDown" = "exec brightnessctl set --exponent=3 10%-";
+                        "Alt+XF86MonBrightnessUp" = "exec brightnessctl -d tpacpi::kbd_backlight set 1+";
+                        "Alt+XF86MonBrightnessDown" = "exec brightnessctl -d tpacpi::kbd_backlight set 1-";
                     };
                     input = {
                         "type:keyboard" = {
