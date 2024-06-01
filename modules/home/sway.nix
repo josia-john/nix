@@ -35,14 +35,20 @@ with lib;
                         "${modifier}+Shift+Control right" = "move workspace to output right";
                         "${modifier}+Shift+Control+left" = "move workspace to output left";
                         "${modifier}+Shift+Control+down" = "move workspace to output down";
+                        "XF86AudioPlay" = "exec playerctl play-pause";
+                        "XF86AudioNext" = "exec playerctl next";
+                        "XF86AudioPrev" = "exec playerctl previous";
+                        "${modifier}+XF86AudioMute" = "exec playerctl play-pause";
+                        "${modifier}+XF86AudioRaiseVolume" = "exec playerctl next";
+                        "${modifier}+XF86AudioLowerVolume" = "exec playerctl previous";
                     
                         "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
                         "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
                         "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -5%";
                         "XF86MonBrightnessUp" = "exec brightnessctl set --exponent=3 10%+";
                         "XF86MonBrightnessDown" = "exec brightnessctl set --exponent=3 10%-";
-                        "Alt+XF86MonBrightnessUp" = "exec brightnessctl -d tpacpi::kbd_backlight set 1+";
-                        "Alt+XF86MonBrightnessDown" = "exec brightnessctl -d tpacpi::kbd_backlight set 1-";
+                        "${modifier}+XF86MonBrightnessUp" = "exec brightnessctl -d tpacpi::kbd_backlight set 1+";
+                        "${modifier}+XF86MonBrightnessDown" = "exec brightnessctl -d tpacpi::kbd_backlight set 1-";
                     };
                     input = {
                         "type:keyboard" = {

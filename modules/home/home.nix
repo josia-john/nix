@@ -19,8 +19,9 @@
             texliveFull
             thunderbird
             pavucontrol
-            mars-mips
             pandoc
+            playerctl
+            libreoffice
         ];
 
         services =  {

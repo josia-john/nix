@@ -11,6 +11,7 @@
         zip
         unzip
         wget
+        gcc
     ];
 
     fonts = {
@@ -20,4 +21,6 @@
             nerdfonts
         ];
     };
+
+    services.printing.enable = true;
 }

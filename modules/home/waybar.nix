@@ -164,7 +164,7 @@
                         "format-disconnected" = "Disconnected";
                         "format-disabled" = "Disabled";
                         "tooltip-format" = "{ipaddr}";
-                        "on-click" = "foot -e nmtui";
+                        "on-click" = "foot -e sh -c \"sleep 0.1 && nmtui\"";
                     };
 
                     "clock#1"= {
@@ -194,7 +194,7 @@
                             ];
                         };
                         "scroll-step"= 5;
-                        "on-click"= "foot -e alsamixer";
+                        "on-click"= "pavucontrol";
                     };
                     "memory"= {
                         "interval"= 5;
