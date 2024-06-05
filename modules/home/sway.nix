@@ -1,15 +1,27 @@
 { config, pkgs, lib, ... }:
 with lib;
 {
-    options.modules.home.sway = {
-        wallpaper = mkOption {
-            description = "wallpaper for sway; leave empty for no wallpaper";
-            type = types.str;
-            default = "";
-        };
-    };
-
     config = {
+        environment.etc."scripts/autostart.sh" = {
+            text = ''
+                obsidian &
+                code &
+                foot &
+                firefox &
+                thunderbird &
+                sleep 5
+                sway '[app_id="firefox"]' move container to workspace 1
+                sway '[app_id="obsidian"]' move container to workspace 2
+                sway '[app_id="code"]' move container to workspace 3
+                sway '[app_id="foot"]' move container to workspace 4
+                sway '[app_id="thunderbird"]' move container to workspace 10
+            '';
+        };
+
+        environment.etc."scripts/wallpaper.png" = {
+            source = ./../../images/wallpaper.png;
+        };
+
         home-manager.users.${config.modules.host.username} = {
             wayland.windowManager.sway = {
                 enable = true;
@@ -70,7 +82,7 @@ with lib;
                             position = "0,1080";
                         };
                         "*" = {
-                            bg = if (config.modules.home.sway.wallpaper != "") then "${config.modules.home.sway.wallpaper} fill" else "#000000 solid_color";
+                            bg = "/etc/scripts/wallpaper.png fill";
                         };
                     };
 
@@ -83,7 +95,7 @@ with lib;
 
                     startup = [
                         {
-                            command = "sh /usr/share/scripts/autostart.sh";
+                            command = "sh /etc/scripts/autostart.sh";
                         }
                     ];
                 };
