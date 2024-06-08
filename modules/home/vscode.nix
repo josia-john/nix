@@ -9,6 +9,7 @@
                 ms-vscode.cpptools
                 james-yu.latex-workshop
                 mathiasfrohlich.kotlin
+                ritwickdey.liveserver
             ];
             mutableExtensionsDir = false;
         };
