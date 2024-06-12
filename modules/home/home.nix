@@ -22,6 +22,7 @@
             pandoc
             playerctl
             libreoffice
+            gthumb
         ];
 
         services =  {

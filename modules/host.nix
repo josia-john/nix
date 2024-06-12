@@ -33,6 +33,15 @@ with lib;
                 ''
                     94.177.8.216 myserver
                 '';
+
+            firewall = {
+                allowedTCPPortRanges = [
+                    { from = 3000; to = 3003; }
+                    { from = 8000; to = 8003; }
+                    { from = 8080; to = 8083; }
+                    { from = 5500; to = 5503; }
+                ];
+            };
         };
 
         services.avahi = {
