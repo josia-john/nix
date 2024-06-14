@@ -1,6 +1,13 @@
 { config, pkgs, lib, ... }:
 with lib;
 {
+    options.modules.home.sway = {
+        wallpaper = mkOption {
+            description = "wallpaper";
+            type = types.path;
+        };
+    };
+
     config = {
         environment.etc."scripts/autostart.sh" = {
             text = ''
@@ -19,7 +26,7 @@ with lib;
         };
 
         environment.etc."scripts/wallpaper.png" = {
-            source = ./../../images/wallpaper.png;
+            source = config.modules.home.sway.wallpaper;
         };
 
         home-manager.users.${config.modules.host.username} = {

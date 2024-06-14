@@ -16,6 +16,13 @@
                     home-manager.nixosModules.home-manager
                 ];
             };
+            thiccpad = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                modules = [
+                    ./hosts/thiccpad/configuration.nix
+                    home-manager.nixosModules.home-manager
+                ];
+            };
         };
     };
 }

@@ -8,11 +8,11 @@
 
     modules = {
         host = {
-            hostname = "nixy";
+            hostname = "thiccpad";
             username = "josia";
         };
         home.sway = {
-            wallpaper = ./../../images/T480.png;
+            wallpaper = ./../../images/X200.png;
         };
     };
 }
