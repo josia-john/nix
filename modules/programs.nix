@@ -12,6 +12,7 @@
         unzip
         wget
         gcc
+        w3m
     ];
 
     fonts = {
