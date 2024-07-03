@@ -30,6 +30,7 @@
                 #workspaces,
                 #scratchpad,
                 #network,
+                #custom-ping,
                 #clock.1,
                 #clock.2,
                 #clock.3,
@@ -77,6 +78,7 @@
 
                 #clock,
                 #network,
+                #custom-ping,
                 #pulseaudio,
                 #memory,
                 #cpu,
@@ -96,6 +98,7 @@
                         "custom/right-arrow-dark"
                         "custom/right-arrow-light"
                         "network"
+                        # "custom/ping"
                         "custom/right-arrow-dark"
                     ];
                     "modules-center"= [
@@ -160,11 +163,16 @@
                         "interval" = 5;
                         "format" = "{iwname}";
                         "format-wifi" = "{essid} ({signalStrength}%)";
-                        "format-ethernet" = "{ipaddr}/{cidr}";
+                        "format-ethernet" = "{ipaddr}";
                         "format-disconnected" = "Disconnected";
                         "format-disabled" = "Disabled";
-                        "tooltip-format" = "{ipaddr}";
+                        "tooltip-format" = "{ipaddr}\n({bandwidthDownBytes}   {bandwidthUpBytes})";
                         "on-click" = "foot -e sh -c \"sleep 0.1 && nmtui\"";
+                    };
+
+                    "custom/ping" = {
+                        "interval" = 5;
+                        "exec" = "ping 1.1 -c 1 | grep -oP '(?<=\=)[0-9]*\.?[0-9]* ms'";
                     };
 
                     "clock#1"= {

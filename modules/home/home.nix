@@ -23,6 +23,8 @@
             playerctl
             libreoffice
             gthumb
+            vlc
+            qbittorrent
         ];
 
         services =  {
