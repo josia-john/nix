@@ -23,7 +23,10 @@
             playerctl
             libreoffice
             gthumb
+            mupdf
+            yt-dlp
             vlc
+            mpv
             qbittorrent
         ];
 
