@@ -203,6 +203,7 @@
                         };
                         "scroll-step"= 5;
                         "on-click"= "pavucontrol";
+                        "on-click-right" = "sh /etc/scripts/PASwitchSink.sh";
                     };
                     "memory"= {
                         "interval"= 5;
