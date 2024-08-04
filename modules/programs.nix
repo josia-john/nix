@@ -13,6 +13,7 @@
         wget
         gcc
         w3m
+        python3
     ];
 
     fonts = {
