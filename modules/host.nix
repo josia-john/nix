@@ -46,7 +46,13 @@ with lib;
 
         services.avahi = {
             enable = true;
-            nssmdns4 = true;
+            nssmdns = true;
+            openFirewall = true;
+            publish = {
+                enable = true;
+                userServices = true;
+                addresses = true;
+            };
         };
 
         users.users.${config.modules.host.username} = {
