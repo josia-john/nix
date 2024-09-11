@@ -28,6 +28,8 @@
             vlc
             mpv
             qbittorrent
+            davinci-resolve
+            arduino
         ];
 
         services =  {

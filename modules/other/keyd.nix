@@ -18,6 +18,7 @@
                         d = "macro(compose d Q)";
                         f = "macro(compose f Q)";
                         g = "macro(compose g Q)";
+                        e = "macro(compose d q)";
                     };
                 };
             };
