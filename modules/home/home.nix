@@ -14,7 +14,6 @@
             wl-clipboard
             swaybg
             obsidian
-            rofi-wayland
             swayimg
             texliveFull
             thunderbird
@@ -43,6 +42,13 @@
             enable = true;
             userName  = "Josia John";
             userEmail = "josia.j.john@gmail.com";
+        };
+
+        programs.rofi = {
+            enable = true;
+            package = pkgs.rofi-wayland;
+            font = "MesloLGS Nerd Font 12";
+            theme = "material";
         };
 
         programs.home-manager.enable = true;
