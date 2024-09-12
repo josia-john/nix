@@ -15,9 +15,9 @@
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     security.polkit.enable = true;
 
-    hardware.opengl = {
+    hardware.graphics = {
         enable = true;
-        driSupport32Bit = true;                             # Build for ARM
+        enable32Bit = true;                             # Build for ARM
         extraPackages = with pkgs; [
             intel-compute-runtime
         ];

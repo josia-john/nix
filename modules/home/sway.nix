@@ -154,7 +154,7 @@ with lib;
 
             home.pointerCursor = {
                 name = "Adwaita";
-                package = pkgs.gnome.adwaita-icon-theme;
+                package = pkgs.adwaita-icon-theme;
                 size = 24;
                 x11 = {
                     enable = true;
@@ -171,6 +171,7 @@ with lib;
 
         # fix swaylock
         security.pam.services.swaylock = {};
+        security.pam.services.swaylock.fprintAuth = true;
 
         # fix electron apps
         environment.sessionVariables.NIXOS_OZONE_WL = "1";
