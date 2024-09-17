@@ -10,6 +10,7 @@
                 james-yu.latex-workshop
                 mathiasfrohlich.kotlin
                 ritwickdey.liveserver
+                ms-python.python
             ];
             mutableExtensionsDir = false;
         };
