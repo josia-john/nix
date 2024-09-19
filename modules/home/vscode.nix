@@ -11,6 +11,7 @@
                 mathiasfrohlich.kotlin
                 ritwickdey.liveserver
                 ms-python.python
+                ocamllabs.ocaml-platform
             ];
             mutableExtensionsDir = false;
         };
