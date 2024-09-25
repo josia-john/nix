@@ -12,6 +12,7 @@
                 ritwickdey.liveserver
                 ms-python.python
                 ocamllabs.ocaml-platform
+                ms-toolsai.jupyter
             ];
             mutableExtensionsDir = false;
         };

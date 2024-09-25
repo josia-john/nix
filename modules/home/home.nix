@@ -29,6 +29,8 @@
             qbittorrent
             davinci-resolve
             arduino
+            ocaml-ng.ocamlPackages_4_13.ocaml
+            ocaml-ng.ocamlPackages_4_13.ocamlbuild
         ];
 
         services =  {

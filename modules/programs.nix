@@ -12,6 +12,7 @@
         unzip
         wget
         gcc
+        gnumake
         w3m
         python3
     ];
