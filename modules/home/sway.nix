@@ -91,6 +91,7 @@ with lib;
                         "${modifier}+Shift+c" = null;
                         "${modifier}+Shift+r" = "reload";
                         "Print" = "exec grim -g \"$(slurp)\"";
+                        "${modifier}+Print" = "exec grim -g \"$(slurp)\" - | wl-copy";
                         "${modifier}+Shift+l" = "exec swaylock --clock --indicator --screenshots --effect-pixelate 10 --effect-greyscale";
                         "${modifier}+Shift+s" = "exec swaylock --clock --indicator --screenshots --effect-pixelate 10 --effect-greyscale & systemctl suspend";
                         "${modifier}+Shift+Control+up" = "move workspace to output up";
@@ -111,11 +112,13 @@ with lib;
                         "XF86MonBrightnessDown" = "exec brightnessctl set --exponent=3 10%-";
                         "${modifier}+XF86MonBrightnessUp" = "exec brightnessctl -d tpacpi::kbd_backlight set 1+";
                         "${modifier}+XF86MonBrightnessDown" = "exec brightnessctl -d tpacpi::kbd_backlight set 1-";
+                        
+                        "XF86Favorites" = "exec swaymsg input 'type:keyboard' xkb_switch_layout next";
                     };
                     input = {
                         "type:keyboard" = {
-                            "xkb_layout" = "us";
-                            "xkb_variant" = "dvorak";
+                            "xkb_layout" = "us,ch";
+                            "xkb_variant" = "dvorak,de";
                             "xkb_options" = "compose:menu";
                         };
                         "*" = {

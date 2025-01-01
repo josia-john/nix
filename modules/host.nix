@@ -41,6 +41,9 @@ with lib;
                     { from = 8080; to = 8083; }
                     { from = 5500; to = 5503; }
                 ];
+                allowedUDPPortRanges = [
+                    { from = 5500; to = 5503; }
+                ];
             };
         };
 
@@ -58,7 +61,7 @@ with lib;
         users.users.${config.modules.host.username} = {
             shell = pkgs.zsh;
             isNormalUser = true;
-            extraGroups = [ "wheel" ];
+            extraGroups = [ "wheel" "wireshark" ];
             initialPassword = config.modules.host.initialPassword;
         };
 

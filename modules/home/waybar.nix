@@ -29,6 +29,7 @@
 
                 #workspaces,
                 #scratchpad,
+                #language,
                 #network,
                 #custom-ping,
                 #clock.1,
@@ -77,6 +78,7 @@
                 }
 
                 #clock,
+                #language,
                 #network,
                 #custom-ping,
                 #pulseaudio,
@@ -95,6 +97,9 @@
                     "modules-left"= [
                         "sway/workspaces"
                         "sway/scratchpad"
+                        "custom/right-arrow-dark"
+                        "custom/right-arrow-light"
+                        "sway/language"
                         "custom/right-arrow-dark"
                         "custom/right-arrow-light"
                         "network"
@@ -157,6 +162,10 @@
                         "format-icons"= ["" ""];
                         "tooltip"= true;
                         "tooltip-format"= "{app}: {title}";
+                    };
+
+                    "sway/language" = {
+                        "format" = "{short} {variant}";
                     };
 
                     "network" = {

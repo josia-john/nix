@@ -4,5 +4,6 @@ _: {
         ./audio.nix
         ./greetd.nix
         ./zsh.nix
+        ./docker.nix
     ];
 }

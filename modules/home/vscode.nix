@@ -13,6 +13,8 @@
                 ms-python.python
                 ocamllabs.ocaml-platform
                 ms-toolsai.jupyter
+                rust-lang.rust-analyzer
+                github.copilot
             ];
             mutableExtensionsDir = false;
         };

@@ -4,6 +4,7 @@
     nixpkgs.config.allowUnfree = true;
 
     environment.systemPackages = with pkgs; [
+        pwgen
         vim
         git
         brightnessctl
@@ -12,9 +13,12 @@
         unzip
         wget
         gcc
+        gdb
         gnumake
         w3m
         python3
+        man-pages
+        rustup
     ];
 
     fonts = {
@@ -27,4 +31,6 @@
 
     services.printing.enable = true;
     services.printing.drivers = [ pkgs.hplip ];
+
+    services.davfs2.enable = true;
 }
