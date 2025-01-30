@@ -32,5 +32,12 @@
     services.printing.enable = true;
     services.printing.drivers = [ pkgs.hplip ];
 
-    services.davfs2.enable = true;
+    services.davfs2 = {
+        enable = true;
+        settings = {
+            globalSection = {
+                use_locks = false;
+            };
+        };
+    };
 }

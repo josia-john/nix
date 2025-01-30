@@ -4,5 +4,6 @@ _: {
         ./home.nix
         ./vscode.nix
         ./waybar.nix
+        ./syncthing.nix
     ];
 }

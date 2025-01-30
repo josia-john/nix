@@ -34,6 +34,7 @@
             patchelf
             gnucash
             bitwarden
+            qrscan
         ];
 
         services =  {
@@ -57,6 +58,9 @@
         };
 
         programs.home-manager.enable = true;
+
+        programs.sioyek.enable = true;
+
         nixpkgs.config.allowUnfree = true;
 
         home.stateVersion = "23.11";

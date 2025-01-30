@@ -15,6 +15,7 @@
                 ms-toolsai.jupyter
                 rust-lang.rust-analyzer
                 github.copilot
+                github.copilot-chat
             ];
             mutableExtensionsDir = false;
         };

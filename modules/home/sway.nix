@@ -92,6 +92,7 @@ with lib;
                         "${modifier}+Shift+r" = "reload";
                         "Print" = "exec grim -g \"$(slurp)\"";
                         "${modifier}+Print" = "exec grim -g \"$(slurp)\" - | wl-copy";
+                        "${modifier}+Shift+Print" = "exec grim -g \"$(slurp)\" -t png /tmp/qr.png && exec qrscan /tmp/qr.png | wl-copy && exec rm /tmp/qr.png";
                         "${modifier}+Shift+l" = "exec swaylock --clock --indicator --screenshots --effect-pixelate 10 --effect-greyscale";
                         "${modifier}+Shift+s" = "exec swaylock --clock --indicator --screenshots --effect-pixelate 10 --effect-greyscale & systemctl suspend";
                         "${modifier}+Shift+Control+up" = "move workspace to output up";
@@ -117,8 +118,8 @@ with lib;
                     };
                     input = {
                         "type:keyboard" = {
-                            "xkb_layout" = "us,ch";
-                            "xkb_variant" = "dvorak,de";
+                            "xkb_layout" = "us,us";
+                            "xkb_variant" = "dvorak,intl";
                             "xkb_options" = "compose:menu";
                         };
                         "*" = {
