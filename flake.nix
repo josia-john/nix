@@ -23,6 +23,12 @@
                     home-manager.nixosModules.home-manager
                 ];
             };
+            chunky = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                modules = [
+                    ./hosts/chunky/configuration.nix
+                    home-manager.nixosModules.home-manager
+                ];
         };
     };
 }
