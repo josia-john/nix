@@ -29,6 +29,7 @@
                     ./hosts/chunky/configuration.nix
                     home-manager.nixosModules.home-manager
                 ];
+            };
         };
     };
 }
