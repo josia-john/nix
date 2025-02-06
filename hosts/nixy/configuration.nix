@@ -20,4 +20,7 @@
         device = "/swapfile";
         size = 16 * 1024; # 16GB
     }];
+    
+
+    system.stateVersion = "24.11"; # Actually a bit older, whatever :(
 }

@@ -25,7 +25,7 @@
         enableDefaultPackages = true;
         fontDir.enable = true;
         packages = with pkgs; [
-            nerdfonts
+            nerd-fonts.meslo-lg
         ];
     };
 

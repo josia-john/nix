@@ -38,4 +38,6 @@ with lib;
         };
     };
     
+
+    system.stateVersion = "24.11"; # Actually a bit older, whatever :(
 }
