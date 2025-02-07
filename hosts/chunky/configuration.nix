@@ -79,6 +79,13 @@
               "workspace" = {         # Name of folder in Syncthing, also the folder ID
               path = "/SYNCTHING/workspace";    # Which folder to add to Syncthing
               devices = [ "nixy" ];      # Which devices to share the folder with
+              versioning = {
+                type = "staggered";
+                params = {
+                  cleanInterval = "3600"; # 1 hour
+                  maxAge = "31536000";    # 1 year
+                };
+              };
               };
           };
       };

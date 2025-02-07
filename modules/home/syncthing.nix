@@ -13,7 +13,7 @@ with lib;
         overrideFolders = true;     # overrides any folders added or deleted through the WebUI
         settings = {
             devices = {
-                "chunky" = { id = "IIRRTSB-AAZSJ7F-QDPMWBU-373OHDL-QT7TL4K-XDJA64Y-7RA2YCN-CF7MGQQ"; };
+                "chunky" = { id = "ENQMJ2K-DK2SF3W-FBOWJCM-EML23O4-YR4KU2U-DKKCMCY-6OG75OH-45O6HAD"; };
             };
             folders = {
                 "workspace" = {         # Name of folder in Syncthing, also the folder ID
