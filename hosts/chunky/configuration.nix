@@ -64,7 +64,7 @@
       };
   };
   
-  services.ssh = {
+  services.openssh = {
     enable = true;
   };
 
