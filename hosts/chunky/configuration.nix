@@ -51,6 +51,8 @@
     git
   ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   services.avahi = {
       enable = true;
       nssmdns4 = true;
