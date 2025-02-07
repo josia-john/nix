@@ -76,11 +76,12 @@
       settings = {
           devices = {
               "nixy" = { id = "Y2366NA-DI2LJ2J-7YGAFT2-PB7JCAZ-HVELDIN-WOKIU22-7FLYE5Q-OXV7MQH"; };
+              "phone" = { id = "OMZVZR4-WGMDJLT-YKGV7DJ-F4L6QNN-UXQQ3MZ-6QEG7QW-IYL2Q7R-WKKZGAX"; };
           };
           folders = {
               "workspace" = {         # Name of folder in Syncthing, also the folder ID
               path = "/SYNCTHING/workspace";    # Which folder to add to Syncthing
-              devices = [ "nixy" ];      # Which devices to share the folder with
+              devices = [ "nixy" "phone" ];      # Which devices to share the folder with
               versioning = {
                 type = "staggered";
                 params = {
