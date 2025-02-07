@@ -19,6 +19,7 @@
         python3
         man-pages
         rustup
+        qdirstat
     ];
 
     fonts = {
