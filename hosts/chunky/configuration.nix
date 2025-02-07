@@ -66,7 +66,7 @@
   
   services.ssh = {
     enable = true;
-  }
+  };
 
   services.syncthing = {
       enable = true;
