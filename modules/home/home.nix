@@ -33,8 +33,10 @@
             wireshark
             patchelf
             gnucash
+            dconf       # Required by gnucash to save state!
             bitwarden
             qrscan
+            nmap
         ];
 
         services =  {

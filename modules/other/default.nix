@@ -5,5 +5,6 @@ _: {
         ./greetd.nix
         ./zsh.nix
         ./docker.nix
+        ./wireguard.nix
     ];
 }
