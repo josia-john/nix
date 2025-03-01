@@ -16,6 +16,8 @@
                 rust-lang.rust-analyzer
                 github.copilot
                 github.copilot-chat
+                haskell.haskell
+                justusadam.language-haskell
             ];
             mutableExtensionsDir = false;
         };

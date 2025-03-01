@@ -6,7 +6,7 @@
         home.homeDirectory = "/home/${config.modules.host.username}";
         
         home.packages = with pkgs; [
-            firefox
+            chromium
             foot
             htop
             grim
@@ -37,6 +37,10 @@
             bitwarden
             qrscan
             nmap
+            ghc         # haskell
+            haskellPackages.haskell-language-server
+            skypeforlinux
+            wf-recorder
         ];
 
         services =  {

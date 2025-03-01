@@ -14,10 +14,10 @@ with lib;
                 obsidian &
                 code &
                 foot &
-                firefox &
+                chromium &
                 thunderbird &
                 sleep 5
-                sway '[app_id="firefox"]' move container to workspace 1
+                sway '[app_id="chromium"]' move container to workspace 1
                 sway '[app_id="obsidian"]' move container to workspace 2
                 sway '[app_id="code"]' move container to workspace 3
                 sway '[app_id="foot"]' move container to workspace 4
@@ -84,6 +84,24 @@ with lib;
                         # modifier = config.home-manager.users.${config.modules.host.username}.wayland.windowManager.sway.config.modifier;
                         modifier = "Mod4";
                         in lib.mkOptionDefault {
+                        "${modifier}+apostrophe" = "workspace a";
+                        "${modifier}+comma" = "workspace b";
+                        "${modifier}+period" = "workspace c";
+                        "${modifier}+a" = "workspace d";
+                        "${modifier}+o" = "workspace e";
+                        "${modifier}+e" = "workspace f";
+
+                        "${modifier}+Shift+apostrophe" = "move container to workspace a";
+                        "${modifier}+Shift+comma" = "move container to workspace b";
+                        "${modifier}+Shift+period" = "move container to workspace c";
+                        "${modifier}+Shift+a" = "move container to workspace d";
+                        "${modifier}+Shift+o" = "move container to workspace e";
+                        "${modifier}+Shift+e" = "move container to workspace f";
+
+                        "${modifier}+p" = "focus parent";
+                        "${modifier}+next" = "focus next sibling";
+                        "${modifier}+prior" = "focus prev sibling";
+
                         "${modifier}+Shift+q" = null;
                         "${modifier}+q" = "kill";
                         "${modifier}+d" = null;
@@ -93,7 +111,7 @@ with lib;
                         "Print" = "exec grim -g \"$(slurp)\"";
                         "${modifier}+Print" = "exec grim -g \"$(slurp)\" - | wl-copy";
                         "${modifier}+Shift+Print" = "exec grim -g \"$(slurp)\" -t png /tmp/qr.png && exec qrscan /tmp/qr.png | wl-copy && exec rm /tmp/qr.png";
-                        "${modifier}+Shift+l" = "exec swaylock --clock --indicator --screenshots --effect-pixelate 10 --effect-greyscale";
+                        "${modifier}+Shift+Delete" = "exec swaylock --clock --indicator --screenshots --effect-pixelate 10 --effect-greyscale";
                         "${modifier}+Shift+s" = "exec swaylock --clock --indicator --screenshots --effect-pixelate 10 --effect-greyscale & systemctl suspend";
                         "${modifier}+Shift+Control+up" = "move workspace to output up";
                         "${modifier}+Shift+Control right" = "move workspace to output right";
@@ -124,6 +142,9 @@ with lib;
                         };
                         "*" = {
                             tap = "enabled";
+                            # enabled_sticky = "disabled";
+                            drag = "enabled";
+                            drag_lock = "disabled";
                         };
                     };
                     output = {
