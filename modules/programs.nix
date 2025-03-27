@@ -20,6 +20,7 @@
         man-pages
         rustup
         qdirstat
+        dig
     ];
 
     fonts = {

@@ -4,9 +4,10 @@
     home-manager.users.${config.modules.host.username} = {
         home.username = "${config.modules.host.username}";
         home.homeDirectory = "/home/${config.modules.host.username}";
-        
+
         home.packages = with pkgs; [
             chromium
+            firefox
             foot
             htop
             grim
@@ -25,7 +26,6 @@
             mupdf
             yt-dlp
             vlc
-            mpv
             qbittorrent
             davinci-resolve
             arduino
@@ -41,12 +41,16 @@
             haskellPackages.haskell-language-server
             skypeforlinux
             wf-recorder
+            openconnect
+            kicad
+            rpi-imager
         ];
 
         services =  {
             mako = {
                 enable = true;
                 defaultTimeout = 4000;
+                ignoreTimeout = true;
             };
         };
 
@@ -54,6 +58,11 @@
             enable = true;
             userName  = "Josia John";
             userEmail = "josia.j.john@gmail.com";
+        };
+
+        programs.mpv = {
+            enable = true;
+            scripts = [ pkgs.mpvScripts.mpris ];
         };
 
         programs.rofi = {

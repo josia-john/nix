@@ -84,19 +84,19 @@ with lib;
                         # modifier = config.home-manager.users.${config.modules.host.username}.wayland.windowManager.sway.config.modifier;
                         modifier = "Mod4";
                         in lib.mkOptionDefault {
-                        "${modifier}+apostrophe" = "workspace a";
-                        "${modifier}+comma" = "workspace b";
-                        "${modifier}+period" = "workspace c";
-                        "${modifier}+a" = "workspace d";
-                        "${modifier}+o" = "workspace e";
-                        "${modifier}+e" = "workspace f";
+                        "${modifier}+apostrophe" = "workspace 11";
+                        "${modifier}+comma" = "workspace 12";
+                        "${modifier}+period" = "workspace 13";
+                        "${modifier}+a" = "workspace 14";
+                        "${modifier}+o" = "workspace 15";
+                        "${modifier}+e" = "workspace 16";
 
-                        "${modifier}+Shift+apostrophe" = "move container to workspace a";
-                        "${modifier}+Shift+comma" = "move container to workspace b";
-                        "${modifier}+Shift+period" = "move container to workspace c";
-                        "${modifier}+Shift+a" = "move container to workspace d";
-                        "${modifier}+Shift+o" = "move container to workspace e";
-                        "${modifier}+Shift+e" = "move container to workspace f";
+                        "${modifier}+Shift+apostrophe" = "move container to workspace 11";
+                        "${modifier}+Shift+comma" = "move container to workspace 12";
+                        "${modifier}+Shift+period" = "move container to workspace 13";
+                        "${modifier}+Shift+a" = "move container to workspace 14";
+                        "${modifier}+Shift+o" = "move container to workspace 15";
+                        "${modifier}+Shift+e" = "move container to workspace 16";
 
                         "${modifier}+p" = "focus parent";
                         "${modifier}+next" = "focus next sibling";
@@ -117,10 +117,10 @@ with lib;
                         "${modifier}+Shift+Control right" = "move workspace to output right";
                         "${modifier}+Shift+Control+left" = "move workspace to output left";
                         "${modifier}+Shift+Control+down" = "move workspace to output down";
-                        "XF86AudioPlay" = "exec playerctl play-pause";
+                        "XF86AudioPlay" = "exec 'playerctl --player=mpv,%any play-pause'";
                         "XF86AudioNext" = "exec playerctl next";
                         "XF86AudioPrev" = "exec playerctl previous";
-                        "${modifier}+XF86AudioMute" = "exec playerctl play-pause";
+                        "${modifier}+XF86AudioMute" = "exec 'playerctl --player=mpv,%any play-pause'";
                         "${modifier}+XF86AudioRaiseVolume" = "exec playerctl next";
                         "${modifier}+XF86AudioLowerVolume" = "exec playerctl previous";
                     
@@ -144,7 +144,7 @@ with lib;
                             tap = "enabled";
                             # enabled_sticky = "disabled";
                             drag = "enabled";
-                            drag_lock = "disabled";
+                            drag_lock = "enabled_sticky";
                         };
                     };
                     output = {
