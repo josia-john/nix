@@ -44,7 +44,7 @@ with lib;
 
                 get_default_sink() {
                 #pw-play --list-targets | grep \* | tail -n 1 | cut -d' ' -f 2 | cut -d : -f 1
-                pactl info | grep 'Default Sink' | cut -d':' -f 2
+                pactl info | grep 'Default Sink' | cut -d':' -f 2-
                 }
 
                 DEF_SINK=$(get_default_sink)
@@ -152,9 +152,15 @@ with lib;
                             scale = "2";
                             position = "0,0";
                         };
+                        HDMI-A-2 = {
+                            scale = "1";
+                            position = "0,0";
+                            # position = "0,-360";
+                        };
                         eDP-1 = {
                             scale = "1.25";
                             position = "0,1080";
+                            # position = "0,0";
                         };
                         "*" = {
                             bg = "/etc/scripts/wallpaper.png fill";

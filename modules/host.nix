@@ -31,7 +31,7 @@ with lib;
 
             extraHosts =
                 ''
-                    94.177.8.216 myserver
+                    94.177.8.216 oetzy
                 '';
 
             firewall = {
@@ -40,6 +40,7 @@ with lib;
                     { from = 8000; to = 8003; }
                     { from = 8080; to = 8083; }
                     { from = 5500; to = 5503; }
+                    { from = 5900; to = 5903; }
                 ];
                 allowedUDPPortRanges = [
                     { from = 5500; to = 5503; }
@@ -61,7 +62,7 @@ with lib;
         users.users.${config.modules.host.username} = {
             shell = pkgs.zsh;
             isNormalUser = true;
-            extraGroups = [ "wheel" "wireshark" ];
+            extraGroups = [ "wheel" "wireshark" "networkmanager" "docker" ];
             initialPassword = config.modules.host.initialPassword;
         };
 

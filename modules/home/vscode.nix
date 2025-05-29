@@ -18,7 +18,14 @@
                 github.copilot-chat
                 haskell.haskell
                 justusadam.language-haskell
-            ];
+            ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+                {
+                    name = "TabOut";
+                    publisher = "albert";
+                    version = "0.2.2";
+                    sha256 = "sha256-s306AHMkUFPaG7ISIr0RscK/k6OVtniIG1CQprBx+cY=";
+                }
+                ];
             mutableExtensionsDir = false;
         };
     };

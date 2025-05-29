@@ -9,6 +9,7 @@
             chromium
             firefox
             foot
+            alacritty
             htop
             grim
             slurp
@@ -28,7 +29,6 @@
             vlc
             qbittorrent
             davinci-resolve
-            arduino
             uxplay
             wireshark
             patchelf
@@ -44,6 +44,9 @@
             openconnect
             kicad
             rpi-imager
+            wayvnc
+            jq
+            pulseaudio
         ];
 
         services =  {
@@ -62,7 +65,8 @@
 
         programs.mpv = {
             enable = true;
-            scripts = [ pkgs.mpvScripts.mpris ];
+            scripts = [ pkgs.mpvScripts.mpris pkgs.mpvScripts.mpv-cheatsheet ];
+            # scripts = [ pkgs.mpvScripts.mpris pkgs.mpvScripts.mpv-cheatsheet pkgs.mpvScripts.autosub ];
         };
 
         programs.rofi = {
