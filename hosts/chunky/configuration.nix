@@ -129,6 +129,14 @@
             };
         };
     };
+    networking.firewall = {
+      allowedTCPPortRanges = [
+        { from = 10001; to = 10003; } # ROC
+      ];
+      allowedUDPPortRanges = [
+        { from = 10001; to = 10003; } # ROC
+      ];
+    }
 
 
   # This value determines the NixOS release from which the default
