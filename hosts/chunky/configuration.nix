@@ -49,7 +49,6 @@
   environment.systemPackages = with pkgs; [
     vim
     git
-    uxplay
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -139,17 +138,9 @@
         { from = 7000; to = 7002; } # uxplay
       ];
     };
-      systemd.services.uxplay = {
-        description = "uxplay Miracast receiver";
-        after = [ "network.target" ];
-        wantedBy = [ "multi-user.target" ];
-
-        serviceConfig = {
-        ExecStart = "${pkgs.uxplay}/bin/uxplay -vs 0 -p 7000";
-        Restart = "always";
-        RestartSec = 5;
-        User = "josia";  # optional: run as a specific user if needed
-        };
+    services.shairport-sync = {
+      enable = true;
+      openFirewall = true;
     };
 
   # This value determines the NixOS release from which the default
