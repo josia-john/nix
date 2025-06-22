@@ -106,7 +106,7 @@
         alsa.support32Bit = true;
         pulse.enable = true;
         extraConfig.pipewire = {
-            "ROC" = {
+            "ROC" = {                     # Note that roc-source needs to be linked to some output!! See man pw-link.
             "context.modules" = [
                 {
                     name = "libpipewire-module-roc-source";
@@ -139,16 +139,18 @@
         { from = 7000; to = 7002; } # uxplay
       ];
     };
+      systemd.services.uxplay = {
+        description = "uxplay Miracast receiver";
+        after = [ "network.target" ];
+        wantedBy = [ "multi-user.target" ];
 
-    systemd.user.services.roc-audio-setup = {
-    description = "ROC audio setup + uxplay";
-    wantedBy = [ "default.target" ];
-    serviceConfig = {
-      ExecStart = "/run/current-system/sw/bin/bash -c '/run/current-system/sw/bin/pw-link roc-sink:receive_FL alsa_output.pci-0000_00_1b.0.analog-stereo:playback_FL && /run/current-system/sw/bin/pw-link roc-sink:receive_FR alsa_output.pci-0000_00_1b.0.analog-stereo:playback_FR && /run/current-system/sw/bin/uxplay -vs 0'";
-      Restart = "always";
+        serviceConfig = {
+        ExecStart = "${pkgs.uxplay}/bin/uxplay -vs 0 -p 7000";
+        Restart = "always";
+        RestartSec = 5;
+        User = "josia";  # optional: run as a specific user if needed
+        };
     };
-  };
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
