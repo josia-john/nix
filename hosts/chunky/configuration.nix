@@ -131,10 +131,10 @@
     };
     networking.firewall = {
       allowedTCPPortRanges = [
-        { from = 10001; to = 10003; } # ROC
+        { from = 10001; to = 10009; } # ROC
       ];
       allowedUDPPortRanges = [
-        { from = 10001; to = 10003; } # ROC
+        { from = 10001; to = 10009; } # ROC
       ];
     };
 
