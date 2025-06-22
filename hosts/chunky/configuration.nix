@@ -132,13 +132,11 @@
     networking.firewall = {
       allowedTCPPortRanges = [
         { from = 10001; to = 10003; } # ROC
-        { from = 7000; to = 7001; } # uxplay
-        { from = 7100; to = 7100; } # uxplay
+        { from = 7000; to = 7002; } # uxplay
       ];
       allowedUDPPortRanges = [
         { from = 10001; to = 10003; } # ROC
-        { from = 6000; to = 6001; } # uxplay
-        { from = 7011; to = 7011; } # uxplay
+        { from = 7000; to = 7002; } # uxplay
       ];
     };
 
@@ -146,12 +144,8 @@
     description = "ROC audio setup + uxplay";
     wantedBy = [ "default.target" ];
     serviceConfig = {
-      ExecStartPre = [
-        "${pkgs.pipewire}/bin/pw-link roc-sink:receive_FL alsa_output.pci-0000_00_1b.0.analog-stereo:playback_FL"
-        "${pkgs.pipewire}/bin/pw-link roc-sink:receive_FR alsa_output.pci-0000_00_1b.0.analog-stereo:playback_FR"
-      ];
-      ExecStart = "${pkgs.uxplay}/bin/uxplay -vs 0";
-      Restart = "on-failure";
+      ExecStart = "/run/current-system/sw/bin/bash -c '/run/current-system/sw/bin/pw-link roc-sink:receive_FL alsa_output.pci-0000_00_1b.0.analog-stereo:playback_FL && /run/current-system/sw/bin/pw-link roc-sink:receive_FR alsa_output.pci-0000_00_1b.0.analog-stereo:playback_FR && /run/current-system/sw/bin/uxplay -vs 0'";
+      Restart = "always";
     };
   };
 
