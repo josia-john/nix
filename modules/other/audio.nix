@@ -31,6 +31,23 @@
                   "raop.latency.ms" = 1000;
                 };
                 }
+                {
+                    name = "libpipewire-module-roc-sink";
+                    args = {
+                        "fec.code" = "disable"; # Replace with your desired multicast or unicast IP
+                        "remote.ip" = "10.8.100.165";
+                        "remote.source.port" = 10001;
+                        "remote.repair.port" = 10002;
+                        "remote.control.port" = 10003;
+                        "sink.name" = "roc-sink";
+                        "sink.props" = {
+                            "node.name" = "roc-sink";
+                            "node.description" = "ROC Sink";
+                            "media.class" = "Audio/Sink";
+                        };
+                    };
+                    # Use `roc-recv -s rtp://0.0.0.0 (--sess-latency=100ms)` on remote machine
+                }
             ];
             };
         };
