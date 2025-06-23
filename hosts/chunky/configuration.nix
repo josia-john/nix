@@ -49,6 +49,7 @@
   environment.systemPackages = with pkgs; [
     vim
     git
+    uxplay
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -138,9 +139,12 @@
         { from = 7000; to = 7002; } # uxplay
       ];
     };
-    services.shairport-sync = {
-      enable = true;
-      openFirewall = true;
+    services.cron = {
+    enable = true;
+        systemCronJobs = [
+        "0 0 * * * josia bash -c 'export XDG_RUNTIME_DIR=/run/user/1000; pkill \"uxplay\"; sleep 2; uxplay -p 7000 -vs 0 > /tmp/uxplay.log 2>&1 &'" 
+        "@reboot josia bash -c 'export XDG_RUNTIME_DIR=/run/user/1000; pkill \"uxplay\"; sleep 2; uxplay -p 7000 -vs 0 > /tmp/uxplay.log 2>&1 &'" 
+        ];
     };
 
   # This value determines the NixOS release from which the default
@@ -150,5 +154,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }
