@@ -39,7 +39,6 @@
             nmap
             ghc         # haskell
             haskellPackages.haskell-language-server
-            skypeforlinux
             wf-recorder
             openconnect
             kicad
@@ -47,13 +46,27 @@
             wayvnc
             jq
             pulseaudio
+            kstars
+            phd2
+            stellarium
+            wdisplays
+            tree
+            element-desktop
         ];
 
         services =  {
             mako = {
                 enable = true;
-                defaultTimeout = 4000;
-                ignoreTimeout = true;
+                settings = {
+                    layer = "overlay";
+                    default-timeout = 4000;
+                    ignore-timeout = true;
+                };
+                extraConfig = ''
+                    # Blocked mode: hide all notifications
+                    [mode=blocked]
+                    invisible=1
+                    '';
             };
         };
 

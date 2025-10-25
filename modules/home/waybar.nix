@@ -40,6 +40,7 @@
                 #cpu,
                 #battery,
                 #disk,
+                #custom-notifications,
                 #tray {
                     background: #1a1a1a;
                 }
@@ -75,6 +76,9 @@
                 }
                 #disk {
                     color: #b58900;
+                }
+                #custom-notifications {
+                    color: #dc322f;
                 }
 
                 #clock,
@@ -118,6 +122,9 @@
                         "custom/right-arrow-dark"
                     ];
                     "modules-right"= [
+                        "custom/left-arrow-dark"
+                        "custom/notifications"
+                        "custom/left-arrow-light"
                         "custom/left-arrow-dark"
                         "pulseaudio"
                         "custom/left-arrow-light"
@@ -165,12 +172,12 @@
                             "8" = "8";
                             "9" = "9";
                             "10" = "10";
-                            "11" = " 󱁉";
-                            "12" = "󰒃";
-                            "13" = " ";
-                            "14" = "󰘧";
-                            "15" = " ";
-                            "16" = "%";
+                            "11" = " 󰏢";
+                            "12" = "";
+                            "13" = "󰆧";
+                            "14" = " 󰥠 ";
+                            "15" = "󰟢";
+                            "16" = "󰟢";
                         };
                     };
 
@@ -200,6 +207,14 @@
                     "custom/ping" = {
                         "interval" = 5;
                         "exec" = "ping 1.1 -c 1 | grep -oP '(?<=\=)[0-9]*\.?[0-9]* ms'";
+                    };
+
+                    "custom/notifications" = {
+                        "interval" = 1;
+                        "exec" = "if makoctl mode | grep -q blocked; then echo ' 󰂛 '; else echo ' 󰂚 '; fi";
+                        "on-click" = "makoctl mode -t blocked";
+                        "tooltip" = true;
+                        "tooltip-format" = "Click to toggle notification blocking";
                     };
 
                     "clock#1"= {

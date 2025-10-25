@@ -99,6 +99,7 @@ with lib;
                         "${modifier}+Shift+e" = "move container to workspace 16";
 
                         "${modifier}+p" = "focus parent";
+                        "${modifier}+n" = "layout toggle split";
                         "${modifier}+next" = "focus next sibling";
                         "${modifier}+prior" = "focus prev sibling";
 
@@ -144,7 +145,7 @@ with lib;
                             tap = "enabled";
                             # enabled_sticky = "disabled";
                             drag = "enabled";
-                            drag_lock = "enabled_sticky";
+                            drag_lock = "disabled";
                         };
                     };
                     output = {

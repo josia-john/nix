@@ -35,7 +35,7 @@
                     name = "libpipewire-module-roc-sink";
                     args = {
                         "fec.code" = "disable"; # Replace with your desired multicast or unicast IP
-                        "remote.ip" = "10.8.100.165";
+                        "remote.ip" = "10.8.100.239";
                         "remote.source.port" = 10001;
                         "remote.repair.port" = 10002;
                         "remote.control.port" = 10003;

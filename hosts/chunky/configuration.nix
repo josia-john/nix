@@ -141,6 +141,7 @@
     };
     services.cron = {
     enable = true;
+        # pw-link roc-sink:receive_FL alsa_output.pci-0000_00_1b.0.analog-stereo:playback_FL??
         systemCronJobs = [
         "0 0 * * * josia bash -c 'export XDG_RUNTIME_DIR=/run/user/1000; pkill \"uxplay\"; sleep 2; uxplay -p 7000 -vs 0 > /tmp/uxplay.log 2>&1 &'" 
         "@reboot josia bash -c 'export XDG_RUNTIME_DIR=/run/user/1000; pkill \"uxplay\"; sleep 2; uxplay -p 7000 -vs 0 > /tmp/uxplay.log 2>&1 &'" 
