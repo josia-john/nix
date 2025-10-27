@@ -6,5 +6,6 @@ _: {
         ./zsh.nix
         ./docker.nix
         ./wireguard.nix
+        ./restic.nix
     ];
 }

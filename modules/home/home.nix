@@ -52,6 +52,7 @@
             wdisplays
             tree
             element-desktop
+            sshfs
         ];
 
         services =  {

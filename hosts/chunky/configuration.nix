@@ -69,36 +69,6 @@
     enable = true;
   };
 
-  services.syncthing = {
-    enable = true;
-    group = "users";
-    user = "josia";
-    dataDir = "/home/josia/Documents";      # Won't be used... Hopefully
-    configDir = "/home/josia/Documents/.config/syncthing";
-    openDefaultPorts = true;
-    overrideDevices = true;     # overrides any devices added or deleted through the WebUI
-    overrideFolders = true;     # overrides any folders added or deleted through the WebUI
-    settings = {
-        devices = {
-            "nixy" = { id = "Y2366NA-DI2LJ2J-7YGAFT2-PB7JCAZ-HVELDIN-WOKIU22-7FLYE5Q-OXV7MQH"; };
-            "phone" = { id = "OMZVZR4-WGMDJLT-YKGV7DJ-F4L6QNN-UXQQ3MZ-6QEG7QW-IYL2Q7R-WKKZGAX"; };
-        };
-        folders = {
-            "workspace" = {         # Name of folder in Syncthing, also the folder ID
-            path = "/SYNCTHING/workspace";    # Which folder to add to Syncthing
-            devices = [ "nixy" "phone" ];      # Which devices to share the folder with
-            versioning = {
-              type = "staggered";
-              params = {
-                cleanInterval = "3600"; # 1 hour
-                maxAge = "31536000";    # 1 year
-              };
-            };
-            };
-        };
-    };
-  };
-
   security.rtkit.enable = true;
     services.pipewire = {
         enable = true;
