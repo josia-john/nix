@@ -70,53 +70,60 @@
   };
 
   security.rtkit.enable = true;
-    services.pipewire = {
-        enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
-        extraConfig.pipewire = {
-            "ROC" = {                     # Note that roc-source needs to be linked to some output!! See man pw-link.
-            "context.modules" = [
-                {
-                    name = "libpipewire-module-roc-source";
-                    args = {
-                        "fec.code" = "disable"; # Replace with your desired multicast or unicast IP
-                        "local.ip" = "0.0.0.0";
-                        "local.source.port" = 10001;
-                        "local.repair.port" = 10002;
-                        "local.control.port" = 10003;
-                        "sess.latency.msec" = 100;
-                        "source.name" = "roc-sink";
-                        "source.props" = {
-                            "node.name" = "roc-sink";
-                            "node.description" = "ROC Sink";
-                            "media.class" = "Audio/Source";
-                        };
-                    };
-                }
-            ];
-            };
-        };
-    };
-    networking.firewall = {
-      allowedTCPPortRanges = [
-        { from = 10001; to = 10003; } # ROC
-        { from = 7000; to = 7002; } # uxplay
+  services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      extraConfig.pipewire = {
+          "ROC" = {                     # Note that roc-source needs to be linked to some output!! See man pw-link.
+          "context.modules" = [
+              {
+                  name = "libpipewire-module-roc-source";
+                  args = {
+                      "fec.code" = "disable"; # Replace with your desired multicast or unicast IP
+                      "local.ip" = "0.0.0.0";
+                      "local.source.port" = 10001;
+                      "local.repair.port" = 10002;
+                      "local.control.port" = 10003;
+                      "sess.latency.msec" = 100;
+                      "source.name" = "roc-sink";
+                      "source.props" = {
+                          "node.name" = "roc-sink";
+                          "node.description" = "ROC Sink";
+                          "media.class" = "Audio/Source";
+                      };
+                  };
+              }
+          ];
+          };
+      };
+  };
+  networking.firewall = {
+    allowedTCPPortRanges = [
+      { from = 10001; to = 10003; } # ROC
+      { from = 7000; to = 7002; } # uxplay
+    ];
+    allowedUDPPortRanges = [
+      { from = 10001; to = 10003; } # ROC
+      { from = 7000; to = 7002; } # uxplay
+    ];
+  };
+  services.cron = {
+  enable = true;
+      # pw-link roc-sink:receive_FL alsa_output.pci-0000_00_1b.0.analog-stereo:playback_FL??
+      systemCronJobs = [
+      "0 0 * * * josia bash -c 'export XDG_RUNTIME_DIR=/run/user/1000; pkill \"uxplay\"; sleep 2; uxplay -p 7000 -vs 0 > /tmp/uxplay.log 2>&1 &'" 
+      "@reboot josia bash -c 'export XDG_RUNTIME_DIR=/run/user/1000; pkill \"uxplay\"; sleep 2; uxplay -p 7000 -vs 0 > /tmp/uxplay.log 2>&1 &'" 
       ];
-      allowedUDPPortRanges = [
-        { from = 10001; to = 10003; } # ROC
-        { from = 7000; to = 7002; } # uxplay
-      ];
-    };
-    services.cron = {
+  };
+
+  services.immich = {
     enable = true;
-        # pw-link roc-sink:receive_FL alsa_output.pci-0000_00_1b.0.analog-stereo:playback_FL??
-        systemCronJobs = [
-        "0 0 * * * josia bash -c 'export XDG_RUNTIME_DIR=/run/user/1000; pkill \"uxplay\"; sleep 2; uxplay -p 7000 -vs 0 > /tmp/uxplay.log 2>&1 &'" 
-        "@reboot josia bash -c 'export XDG_RUNTIME_DIR=/run/user/1000; pkill \"uxplay\"; sleep 2; uxplay -p 7000 -vs 0 > /tmp/uxplay.log 2>&1 &'" 
-        ];
-    };
+    host = "0.0.0.0";
+    port = 80;
+    openFirewall = true;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
